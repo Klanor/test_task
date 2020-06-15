@@ -65,6 +65,7 @@ void matrix::moveUsefulRange() {
 
     for(size_t y = 0; y < pic_height; ++y){
         for(size_t x = 0; x < pic_width; ++x){
+            delete _matrix.at(y).at(x);
             _matrix.at(y).at(x) = _matrix.at(y+pic_y).at(x+pic_x);
             _matrix.at(y+pic_y).at(x+pic_x) = nullptr;
         }
